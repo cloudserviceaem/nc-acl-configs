@@ -2,30 +2,30 @@
 
 - user_config:
 
-    - dpcms-restrict-basic:
-       - name: DPCMS Basic Restriction group
+    - core-restrict-basic:
+       - name: CORE Basic Restriction group
          isMemberOf:
-         path: DP-CMS/base
+         path: CORE/base
 
-    - dpcms-allow-basic:
-       - name: DPCMS Basic Access group
+    - core-allow-basic:
+       - name: CORE Basic Access group
          isMemberOf:
-         path: DP-CMS/base
+         path: CORE/base
 
-    - dpcms-content-allow-basic:
-       - name: DPCMS Basic Content Access group
+    - core-content-allow-basic:
+       - name: CORE Basic Content Access group
          isMemberOf:
-         path: DP-CMS/base
+         path: CORE/base
 
-    - dpcms-parent-basic:
-        - name: DPCMS parent Basic Access group
+    - core-parent-basic:
+        - name: CORE parent Basic Access group
           isMemberOf: core-restrict-basic,core-allow-basic,core-content-allow-basic
-          path: DP-CMS/base
+          path: CORE/base
 
 
 - ace_config:
 
-    - dpcms-restrict-basic:
+    - core-restrict-basic:
 
        - path: /libs/cq/core/content/nav/communities
          permission: deny
@@ -146,7 +146,7 @@
          privileges:
          repGlob:
 
-    - dpcms-allow-basic:
+    - core-allow-basic:
 
        #Basic allow on global paths
        - path: /
@@ -273,7 +273,7 @@
          permission: allow
          actions: read
 
-    - dpcms-content-allow-basic:
+    - core-content-allow-basic:
 
        - path: /content
          permission: allow
@@ -299,7 +299,7 @@
          privileges:
          repGlob: ""
 
-    - dpcms-parent-basic:
+    - core-parent-basic:
 
         - path: /content/dam/demos
           permission: allow

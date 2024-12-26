@@ -2,20 +2,20 @@
 
 - user_config:
 
-    - dpcms-author-group:
-       - name: DPCMS Author group
-         isMemberOf: dpcms-parent-basic
-         path: DP-CMS/functional
+    - core-author-group:
+       - name: CORE Author group
+         isMemberOf: core-parent-basic
+         path: CORE/functional
 
-    - dpcms-developer-group:
-       - name: DPCMS Developer group
-         isMemberOf: dpcms-parent-basic,dpcms-author-group
-         path: DP-CMS/functional
+    - core-developer-group:
+       - name: CORE Developer group
+         isMemberOf: core-parent-basic,core-author-group
+         path: CORE/functional
 
 
 - ace_config:
 
-    - dpcms-author-group:
+    - core-author-group:
 
        # Access to models to have manage publication menu
        - path: /etc/workflow/models
@@ -75,7 +75,7 @@
          privileges:
          repGlob:
 
-    - dpcms-developer-group:
+    - core-developer-group:
 
        #crx read access to content, dam, XF, tags and confs
        - path: /content
