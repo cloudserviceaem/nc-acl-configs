@@ -1,0 +1,69 @@
+# Service users
+
+- user_config:
+
+    - core-workflow-service:
+
+       - name: Core Workflow System User
+         path: system/NC
+         isSystemUser: true
+         
+
+    - core-archival-service:
+
+       - name: Core Archival System User
+         path: system/NC
+         isSystemUser: true
+         
+
+    - core-inbox-service:
+
+       - name: Core inbox System User
+         path: system/NC
+         isSystemUser: true
+
+
+- ace_config:
+
+    - core-workflow-service:
+
+       - path: /content
+         permission: allow
+         actions: read
+
+       - path: /conf
+         permission: allow
+         actions: read
+
+       - path: /var
+         permission: allow
+         privileges: jcr:read,jcr:versionManagement,jcr:modifyProperties,jcr:addChildNodes,jcr:lockManagement,jcr:nodeTypeManagement,jcr:removeChildNodes,jcr:removeNode
+
+       - path: /home
+         permission: allow
+         actions: read
+
+       - path: /home/groups
+         permission: allow
+         privileges: jcr:all
+
+
+    - core-archival-service:
+
+       - path: /content/dam
+         permission: allow
+         privileges: jcr:read,jcr:versionManagement,jcr:modifyProperties,jcr:addChildNodes,jcr:lockManagement,jcr:nodeTypeManagement,jcr:removeChildNodes,jcr:removeNode
+
+       - path: /conf
+         permission: allow
+         actions: read
+
+    - core-inbox-service:
+
+       - path: /home
+         permission: allow
+         actions: read
+
+       - path: /content
+         permission: allow
+         actions: read
