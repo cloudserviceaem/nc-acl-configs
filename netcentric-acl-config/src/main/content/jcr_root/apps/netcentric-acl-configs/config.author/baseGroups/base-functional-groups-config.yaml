@@ -1,0 +1,200 @@
+# Service users
+
+- user_config:
+
+    - dpcms-author-group:
+       - name: DPCMS Author group
+         isMemberOf: dpcms-parent-basic
+         path: DP-CMS/functional
+
+    - dpcms-developer-group:
+       - name: DPCMS Developer group
+         isMemberOf: dpcms-parent-basic,dpcms-author-group
+         path: DP-CMS/functional
+
+
+- ace_config:
+
+    - dpcms-author-group:
+
+       # Access to models to have manage publication menu
+       - path: /etc/workflow/models
+         permission: allow
+         actions: read
+         repGlob:
+
+       #basic wf access
+       - path: /conf/global/settings/workflow
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /conf/global/settings/workflow/models
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /conf/global/settings/workflow/launcher
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       #access to dam customizations
+       - path: /apps/dam
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/dam/gui
+         permission: allow
+         actions: read
+
+       - path: /apps/dam/cfm
+         permission: allow
+         actions: read
+
+       #reports
+       - path: /apps/cq/core/content/nav/reports
+         permission: allow
+         actions: read
+
+       #read access to acs-coomons
+       - path: /etc/acs-commons
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/acs-commons
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+    - dpcms-developer-group:
+
+       #crx read access to content, dam, XF, tags and confs
+       - path: /content
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /content/dam
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /content/experience-fragments
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /content/cq:tags
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /conf
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /apps
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: /jcr:*
+
+       #welcome screen for advanced developers
+       - path: /libs/cq/core/content/welcome
+         permission: allow
+         actions: read
+
+       #Custom consoled for advanced developers
+       - path: /apps/cq
+         permission: allow
+         actions: read
+         repGlob: ""
+
+       - path: /apps/cq/core
+         permission: allow
+         actions: read
+         repGlob: ""
+
+       - path: /apps/cq/core/content
+         permission: allow
+         actions: read
+         repGlob: ""
+
+       - path: /apps/cq/core/content/nav
+         permission: allow
+         actions: read
+         repGlob: ""
+
+       - path: /apps/cq/core/content/nav/reports
+         permission: allow
+         actions: read
+
+       #Basic workflow create access
+       - path: /conf/global/settings/workflow
+         permission: allow
+         actions: read,modify,create,delete,replicate
+         privileges:
+         repGlob: ""
+
+       #read only access
+       - path: /conf/global/settings/workflow
+         permission: allow
+         actions: read,modify,create,delete,replicate
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /conf/global/settings/workflow/models
+         permission: allow
+         actions: read,modify,create,delete,acl_read,replicate
+         privileges:
+         repGlob: ""
+
+       - path: /conf/global/settings/workflow/models
+         permission: allow
+         actions: read,modify,create,delete,acl_read,replicate
+         privileges:
+         repGlob: /jcr:*
+
+       - path: /conf/global/settings/workflow/launcher
+         permission: allow
+         actions: read,modify,create,delete,replicate
+         privileges:
+         repGlob:
+
+
+       # access to useradmin console
+       - path: /libs/cq/security/content/admin
+         permission: allow
+         actions: read
+
+       - path: /libs/cq/core/content/welcome/features/crxde
+         permission: allow
+         actions: read
+
+       - path: /libs/cq/core/content/welcome/features/packages
+         permission: allow
+         actions: read
+
+       #allow package manager access
+       - path: /etc/packages
+         permission: allow
+         actions: read,acl_read,replicate
+
+       - path: /apps/cq/core/content/nav/reports
+         permission: allow
+         actions: read

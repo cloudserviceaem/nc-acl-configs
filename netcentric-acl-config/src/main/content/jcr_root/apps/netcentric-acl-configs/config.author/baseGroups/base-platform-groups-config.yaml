@@ -1,0 +1,314 @@
+# Service users
+
+- user_config:
+
+    - dpcms-restrict-basic:
+       - name: DPCMS Basic Restriction group
+         isMemberOf:
+         path: DP-CMS/base
+
+    - dpcms-allow-basic:
+       - name: DPCMS Basic Access group
+         isMemberOf:
+         path: DP-CMS/base
+
+    - dpcms-content-allow-basic:
+       - name: DPCMS Basic Content Access group
+         isMemberOf:
+         path: DP-CMS/base
+
+    - dpcms-parent-basic:
+        - name: DPCMS parent Basic Access group
+          isMemberOf: core-restrict-basic,core-allow-basic,core-content-allow-basic
+          path: DP-CMS/base
+
+
+- ace_config:
+
+    - dpcms-restrict-basic:
+
+       - path: /libs/cq/core/content/nav/communities
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/projects
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/personalization
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/commerce
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/screens
+         permission: deny
+         actions: read
+
+       #forms
+       - path: /libs/cq/core/content/nav/forms
+         permission: deny
+         actions: read
+
+       #assets
+       - path: /libs/cq/core/content/nav/assets/stocksearch
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/assets/collections
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/assets/link
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/assets/templates
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/assets/catalogs
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/nav/assets/asyncjobs
+         permission: deny
+         actions: read
+
+       #users
+       - path: /libs/cq/security/content/admin
+         permission: allow
+         actions: read
+
+       - path: /libs/collab/core/content/admin
+         permission: deny
+         actions: read
+
+       - path: /libs/wcm/core/content/misc
+         permission: deny
+         actions: read
+
+       - path: /libs/mcm/content/admin
+         permission: deny
+         actions: read
+
+       - path: /libs/cq/core/content/welcome
+         permission: deny
+         actions: read
+
+       - path: /libs/settings/dam/cfm/templates/simple
+         permission: deny
+         actions: read
+
+       #reports
+       - path: /apps/cq/core/content/nav/reports
+         permission: deny
+         actions: read
+
+        #Brightcove
+       - path: /apps/cq/core/content/nav/brightcove
+         permission: deny
+         actions: read
+
+        #default XF
+       - path: /content/experience-fragments
+         permission: deny
+         actions: read
+         privileges:
+         repGlob:
+
+        #default cq tags
+       - path: /content/cq:tags
+         permission: deny
+         actions: read
+         privileges:
+         repGlob:
+
+
+       - path: /content/cq:tags/facebook
+         permission: deny
+         actions: read
+         privileges:
+         repGlob:
+
+       #default access to all wf models
+       - path: /var/workflow/models
+         permission: deny
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /etc/workflow/models
+         permission: deny
+         actions: read
+         privileges:
+         repGlob:
+
+    - dpcms-allow-basic:
+
+       #Basic allow on global paths
+       - path: /
+         permission: allow
+         actions:
+         privileges: jcr:read,jcr:readAccessControl
+         repGlob: ""
+
+       - path: /apps
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /libs
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /var
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /conf
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /etc
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /etc/clientlibs
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /var/workflow/models
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /var/workflow/models
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: "/scheduled_*"
+
+       - path: /var/workflow/instances
+         permission: allow
+         actions: read,modify,create,acl_read
+         privileges:
+         repGlob:
+
+       - path: /etc/workflow
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /etc/workflow/instances
+         permission: allow
+         actions: read,modify,create,acl_read
+         privileges:
+         repGlob:
+
+       #read only access
+       - path: /conf/global
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /conf/global/settings/wcm
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/wcm
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/core
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/brightcove
+         permission: allow
+         actions: read
+         privileges:
+         repGlob:
+
+       - path: /apps/cq
+         permission: allow
+         actions: read
+
+       - path: /apps/settings
+         permission: allow
+         actions: read
+
+       - path: /apps/wcm-io
+         permission: allow
+         actions: read
+
+       - path: /home
+         permission: allow
+         actions: read
+         repGlob: ""
+
+       - path: /home/users
+         permission: allow
+         actions: read
+
+    - dpcms-content-allow-basic:
+
+       - path: /content
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /content/experience-fragments
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /content/dam
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+       - path: /content/cq:tags
+         permission: allow
+         actions: read
+         privileges:
+         repGlob: ""
+
+    - dpcms-parent-basic:
+
+        - path: /content/dam/demos
+          permission: allow
+          actions: read
+          privileges:
+          repGlob:
+
+        - path: /content/demos
+          permission: allow
+          actions: read
+          privileges:
+          repGlob:
